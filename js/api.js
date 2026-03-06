@@ -1,17 +1,21 @@
-function registerShop(){
+function registerUser(){
 
-let shop = {
+let username = document.getElementById("username").value;
 
-name: document.getElementById("name").value,
-phone: document.getElementById("phone").value,
-address: document.getElementById("address").value,
-email: document.getElementById("email").value,
-wallet: document.getElementById("wallet").value
-
+let user = {
+username: username
 };
 
-console.log(shop);
+fetch("data/users.json")
+.then(response => response.json())
+.then(data => {
+
+data.push(user);
+
+console.log("User registered:", user);
 
 alert("Đăng ký thành công");
+
+});
 
 }
