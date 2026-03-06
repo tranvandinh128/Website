@@ -2,27 +2,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ví Pi</title>
+<title>Dashboard</title>
 <script src="js/wallet.js"></script>
 </head>
 
 <body>
 
-<h2>Ví Pi người dùng</h2>
+<h1>Dashboard</h1>
 
-<p id="user"></p>
+<p>Chào mừng đến hệ thống Pi Marketplace</p>
 
-<h3>Nạp Pi</h3>
+<button onclick="loadWallet()">Xem ví Pi</button>
 
-<input id="deposit" placeholder="Số Pi nạp">
-
-<button onclick="deposit()">Nạp</button>
-
-<h3>Rút Pi</h3>
-
-<input id="withdraw" placeholder="Số Pi rút">
-
-<button onclick="withdraw()">Rút</button>
+<div id="wallet"></div>
 
 </body>
 </html>
