@@ -1,19 +1,22 @@
-const Pi = window.Pi;
+function piLogin(){
+
 Pi.init({ version: "2.0" });
 
-function loginPi() {
+const scopes = ['username','payments'];
 
-Pi.authenticate(['username','payments'], onIncompletePaymentFound)
-.then(function(auth) {
+function onIncompletePaymentFound(payment){
+console.log(payment);
+}
 
-localStorage.setItem("pi_user", auth.user.username);
+Pi.authenticate(scopes,onIncompletePaymentFound)
+.then(function(auth){
+
+console.log(auth);
+
+localStorage.setItem("piUser",auth.user.username);
 
 window.location.href="dashboard.html";
 
 });
 
-}
-
-function onIncompletePaymentFound(payment) {
-console.log(payment);
 }
